@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Dynamic Page </title>
+
+
+	<meta name="description" content=" Designs is a web presence reflecting the art and works of .
+		It is an amalgam of sketches, computer graphics, and projects created over the past couple of years.
+		Thank you for looking!" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="css/HeaderStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/FooterStyle.css">
+	<link rel="stylesheet" type="text/css" href="css/MasterStyle.css">
+
+	<link rel="stylesheet" href="#">
+
+	<style>
+
+	:root {
+		--color-1: yellow;
+		--color-2: pink;
+		--color-3: red;
+		--color-4: red;
+
+		--color-neutral-1: blue;
+		--color-neutral-2: red;
+		--color-neutral-3:red;
+
+		--font-family-1: "Baskerville", "Baskerville Old Face", "Hoefler Text", "Garamond", "Times New Roman", serif;
+		--font-family-2: "Impact", "Charcoal", sans-serif;
+
+		--margin-1: 10px;
+		--margin-2: 20px;
+		--margin-3: 50px;
+	}
+
+
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text", "Garamond", "Times New Roman", serif;
+	}
+
+	a {
+		color: var(--color-neutral-1);
+		text-decoration: none;
+	}
+
+	main {
+		flex: 1;
+	}
+
+	.PageBox {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ErrorDisplay {
+		color: red;
+		font-size: .85em;
+		font-style: italic;
+	}
+
+	.BorderButton1 {
+		background-color: red;
+		border: solid thin var(--color-1);
+		color: var(--color-1);
+		cursor: pointer;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+	.BorderButton1:hover {
+		background-color: red);
+		border: solid thin var(--color-1);
+		color: var(--color-neutral-1);
+		font-weight: bold;
+		transition: 300ms;
+	}
+
+	.BorderButton2 {
+		background-color: blue;
+		border: solid thin var(--color-2);
+		color: var(--color-2);
+		cursor: pointer;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+	.BorderButton2:hover {
+		background-color: red;
+		border: solid thin var(--color-2);
+		color: var(--color-neutral-2);
+		font-weight: bold;
+		transition: 300ms;
+	}
+
+	.BorderButton3 {
+		background-color: red;
+		border: solid thin var(--color-neutral-2);
+		color: var(--color-neutral-2);
+		cursor: pointer;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+	.BorderButton3:hover {
+		background-color: red;
+		border: solid thin var(--color-neutral-2);
+		color: var(--color-neutral-1);
+		font-weight: bold;
+		transition: 300ms;
+	}
+
+	.BorderButton4 {
+		background-color: red;
+		border: solid thin var(--color-neutral-1);
+		color: var(--color-neutral-1);
+		cursor: pointer;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+	.BorderButton4:hover {
+		background-color: red;
+		border: solid thin var(--color-neutral-1);
+		color: var(--color-neutral-2);
+		font-weight: bold;
+		transition: 300ms;
+	}
+
+	.SolidButton1 {
+		background-color: red;
+		border: solid thin var(--color-1);
+		color: var(--color-neutral-1);
+		cursor: pointer;
+		font-weight: bold;
+		padding: 5px 10px;
+	}
+	.SolidButton1:hover {
+		background-color: red);
+		border: solid thin var(--color-1);
+		color: var(--color-1);
+		font-weight: bold;
+		transition: 300ms;
+	}
+
+
+
+	footer {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		font-size: .95em;
+		justify-content: center;
+		letter-spacing: 1.25px;
+		overflow: hidden;
+		padding: 0 50px 30px 50px;
+		position: relative;
+		width: 100%;
+	}
+
+	.SocialConnectAndPaymentType {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 20px 20px 30px 20px;
+		width: 100%;
+	}
+
+	.SocialConnectAndPaymentType a {
+		border: solid thin var(--color-1);
+		border-radius: 2px;
+		height: 45px;
+		margin: 0 10px;
+		padding: 3px;
+		width: 45px;
+	}
+
+	.SocialConnectAndPaymentType img {
+		height: 100%;
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.SocialConnectAndPaymentType div {
+		background-color: yellow);
+		height: 100%;
+		margin: 0 20px;
+		transform: skewX(-20deg);
+	}
+
+	.FooterInfo {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		margin-bottom: var(--margin-3);
+		width: 100%;
+	}
+
+	.FooterInfo h3 {
+		font-family: var(--font-family-2);
+		margin-bottom: 15px;
+	}
+
+	.FooterInfo a {
+		display: block;
+		margin-bottom: 7px;
+	}
+
+	.FooterInfo a:hover {
+		text-decoration: underline;
+	}
+
+	.FooterDesignLeft {
+		background-color: red;
+		left: -5%;
+		height: 115%;
+		position: absolute;
+		transform: skewX(-20deg);
+		width: 10%;
+	}
+
+	.FooterDesignRight {
+		background-color: red;
+		right: -5%;
+		height: 115%;
+		position: absolute;
+		transform: skewX(20deg);
+		width: 10%;
+	}
+
+	.Copyright {
+		font-weight: bold;
+	}
+
+
+	header {
+		background-color: red;
+		overflow: hidden;
+		position: sticky;
+		top: 0;
+		width: 100%;
+		z-index: 10;
+	}
+
+	.HeaderBox {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		height: 90px;
+		justify-content: center;
+		overflow: hidden;
+		padding: 0 var(--margin-3);
+	}
+
+	.HeaderSearch {
+		display: flex;
+		flex-direction: column;
+		font-family: var(--font-family-2);
+		font-size: 1.2em;
+		letter-spacing: 1.25px;
+		margin-right: auto;
+	}
+
+	.HeaderSearch input {
+		background-color: var(--color-neutral-3);
+		border: none;
+		border-bottom-color: var(--color-neutral-1);
+		border-bottom-style: solid;
+		border-bottom-width: thin;
+		font-family: var(--font-family-1);
+		font-size: .85em;
+		height: 30px;
+		width: 75%;
+	}
+
+	.HeaderTitle {
+		font-size: 1.6em;
+		font-family: var(--font-family-2);
+		letter-spacing: 1.25px;
+		position: absolute;
+		text-align: center;
+	}
+
+	.HeaderIcons {
+		font-size: 2.75em;
+		margin-left: auto;
+		text-align: right;
+	}
+
+	.HeaderIcons > .HeaderUserName {
+		color: var(--color-2);
+		font-size: .45em;
+		margin: 0 var(--margin-1);
+		margin-bottom: -5px;
+	}
+
+	.HeaderIcons a {
+		margin: 0 8px;
+	}
+
+	.HeaderDesign {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+		justify-content: center;
+		position: absolute;
+		width: 30%;
+		z-index: -1;
+	}
+
+	.HeaderDesign > div:first-of-type {
+		background-color: red;
+		height: 130%;
+		margin-right: 100px;
+		position: absolute;
+		transform: skewX(20deg);
+		width: 100%;
+	}
+
+	.HeaderDesign > div:last-of-type {
+		background-color: red;
+		height: 130%;
+		margin-left: 100px;
+		position: absolute;
+		transform: skewX(-20deg);
+		width: 100%;
+	}
+
+	.AdminBox {
+		align-items: center;
+		background-color: red;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		padding: 5px 40px;
+	}
+
+	.AdminBox h2 {
+		margin-right: var(--margin-2);
+	}
+
+	.AdminBox a {
+		margin-left: var(--margin-2);
+	}
+
+
+	footer {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		font-size: .95em;
+		justify-content: center;
+		letter-spacing: 1.25px;
+		overflow: hidden;
+		padding: 0 50px 30px 50px;
+		position: relative;
+		width: 100%;
+	}
+
+	.SocialConnectAndPaymentType {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 20px 20px 30px 20px;
+		width: 100%;
+	}
+
+	.SocialConnectAndPaymentType a {
+		border: solid thin var(--color-1);
+		border-radius: 2px;
+		height: 45px;
+		margin: 0 10px;
+		padding: 3px;
+		width: 45px;
+	}
+
+	.SocialConnectAndPaymentType img {
+		height: 100%;
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.SocialConnectAndPaymentType div {
+		background-color: red;
+		height: 100%;
+		margin: 0 20px;
+		transform: skewX(-20deg);
+	}
+
+	.FooterInfo {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		margin-bottom: var(--margin-3);
+		width: 100%;
+	}
+
+	.FooterInfo h3 {
+		font-family: var(--font-family-2);
+		margin-bottom: 15px;
+	}
+
+	.FooterInfo a {
+		display: block;
+		margin-bottom: 7px;
+	}
+
+	.FooterInfo a:hover {
+		text-decoration: underline;
+	}
+
+	.FooterDesignLeft {
+		background-color: red;
+		left: -5%;
+		height: 115%;
+		position: absolute;
+		transform: skewX(-20deg);
+		width: 10%;
+	}
+
+	.FooterDesignRight {
+		background-color: red;
+		right: -5%;
+		height: 115%;
+		position: absolute;
+		transform: skewX(20deg);
+		width: 10%;
+	}
+
+	.Copyright {
+		font-weight: bold;
+	}
+
+
+
+
+		main {
+			margin: 100px 120px;
+		}
+
+		.LoginErrorBox {
+			border: solid medium var(--color-2);
+			color: var(--color-2);
+			padding: 15px;
+			margin-bottom: 20px;
+		}
+
+		.LoginBox {
+			background-color: yellow;
+			color: var(--color-neutral-1);
+			display: flex;
+			flex-direction: row;
+			overflow: hidden;
+			padding: 50px 0;
+			position: relative;
+		}
+		.LoginBox h2 {
+			letter-spacing: 1.5px;
+			margin-bottom: var(--margin-3);
+		}
+
+		.SignInFormBox {
+			align-items: center;
+			display: flex;
+			color: var(--color-neutral-2);
+			flex-basis: 50%;
+			flex-direction: column;
+			z-index: 1;
+		}
+		.SignInForm {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+		}
+		.SignInForm label {
+			font-size: 1.1em;
+			margin-bottom: var(--margin-1);
+		}
+		.SignInForm input {
+			font-size: .9em;
+			margin-bottom: var(--margin-2);
+			padding: 10px;
+			width: 300px;
+		}
+		.SignInForm input:nth-of-type(2) {
+			margin-bottom: var(--margin-3);
+		}
+
+		.NewUserBox {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			flex-basis: 50%;
+			z-index: 1;
+		}
+
+		.LoginBoxBackground {
+			background-color: yellow;
+			bottom: 0;
+			height: 100%;
+			position: absolute;
+			right: -100px;
+			transform: skewX(-20deg);
+			width: 60%;
+		}
+
+		.SpecialButton, input.SpecialButton {
+			cursor: pointer;
+			font-family: var(--font-family-1);
+			font-size: 1.3em;
+			padding: 20px;
+			text-align: center;
+			width: 225px;
+		}
+
+		@media only screen and (min-width: 480px) and (max-width: 767px) {
+		}
+		@media only screen and (min-width: 768px) {
+		}
+	</style>
+
+	<script src="validationJavascript.js"></script>
+	<script>
+
+		function setupJavascript() {
+
+			document.querySelector("#UserEmail").onblur = function() {
+				EmailValidation("#UserEmail", "#UserEmailError");
+			};
+
+			document.querySelector("#SubmitButton").onclick = function() {
+				ValidForm = true;
+
+				EmailValidation("#UserEmail", "#UserEmailError");
+
+				if(ValidForm) {
+					document.querySelector("#SignInFormID").submit();
+				}
+				else {
+					alert("Invalid form. Please fix any fields with error messages.");
+				}
+			};
+		}
+
+	</script>
+</head>
+
+<body onload="setupJavascript();">
+
+	<div class="PageBox">
+		<div id='top'></div><header><div class='HeaderBox'><div class='HeaderSearch'><label for='SearchBox'>Search</label><input type='search' id='SearchBox' name='SearchBox' /></div><div class='HeaderTitle'><a href=><h1>Dynamic</h1></a></div><div class='HeaderIcons'><a href='./GeekStyleLogin.php' style='font-size: .95em;'> &#9786; </a><a href='javascript:void(0);'> &#10084; </a><a href='javascript:void(0);'> &#8852; </a></div><div class='HeaderDesign'><div>&nbsp;</div><div>&nbsp;</div></div></div></header>
+		<main>
+			<span></span>
+
+			<div class="LoginBox">
+				<div class="SignInFormBox">
+					<h2>Well hi there!</h2>
+					<form class="SignInForm" id="SignInFormID" method="post" action="/DMACC/wdv341/GeekStyle/GeekStyleLogin.php">
+						<label for="UserEmail">E-mail </label>
+						<span class="ErrorDisplay" id="UserEmailError"></span>
+						<input type="email" id="UserEmail" name="UserEmail" />
+
+						<label for="UserPassword">Password </label>
+						<input type="password" id="UserPassword" name="UserPassword" />
+
+						<input class="BorderButton3 SpecialButton" type="submit" id="SubmitButton" name="SubmitButton" value="Sign in time &#9786;" />
+					</form>
+				</div>
+				<div class="NewUserBox">
+					<h2>Join </h2>
+					<a class="BorderButton4 SpecialButton" href="javascript:void(0);">
+						<div>Create an Account </div>
+					</a>
+				</div>
+				<div class="LoginBoxBackground">&nbsp;</div>
+			</div>
+		</main>
+
+		<footer><div class='SocialConnectAndPaymentType'><a href='javascript:void(0);'><img src='images/FacebookLogo.png' /></a><a href='javascript:void(0);'><img src='images/InstagramLogo.png' /></a><a href='javascript:void(0);'><img src='images/SnapchatLogo.png /></</div>
+
+</body>
+</html>
